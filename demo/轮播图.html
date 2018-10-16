@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            position: relative;
+            margin: 50px auto;
+            width: 1080px;
+            height: 432px;
+            box-shadow: 0 0 3px #d45d5c;
+            overflow: hidden;
+        }
+        .container .wrap{
+            position: absolute;
+            width: 8640px;
+            height: 432px;
+            z-index: 1;
+        }
+        img{
+            float: left;
+            width: 1080px;
+            height: 432px;
+        }
+        .container .buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            width: 140px;
+            height: 10px;
+            z-index: 2;
+        }
+        .container .buttons span {
+            margin-left: 5px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #CCCCCC;
+            text-align: center;
+            color: #000000;
+            cursor: pointer;
+        }
+        .container .buttons .on {
+            background-color: #c7254e;
+        }
+        .container .arrow {
+            position: absolute;
+            top: 40%;
+            color: #de5157;
+            padding: 0 15px;
+            border-radius: 50%;
+            font-size: 50px;
+            z-index: 2;
+            display: none;
+        }
+        .container #prev {
+            left: 10px;
+        }
+        .container #next {
+            right: 10px;
+        }
+        .container:hover .arrow {
+            display: block;
+        }
+        .container .arrow:hover {
+            background-color: rgba(255,214,209,.6);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="wrap" id="wrap" style="left: -1080px;">
+        <img src="images/轮播图/6.jpg" alt="">
+        <img src="images/轮播图/1.jpg" alt="">
+        <img src="images/轮播图/2.jpg" alt="">
+        <img src="images/轮播图/3.jpg" alt="">
+        <img src="images/轮播图/4.jpg" alt="">
+        <img src="images/轮播图/5.jpg" alt="">
+        <img src="images/轮播图/6.jpg" alt="">
+        <img src="images/轮播图/1.jpg" alt="">
+    </div>
+
+    <div id="buttons" class="buttons">
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <a href="javascript:;" class="arrow arrow_left" id="prev"><</a>
+    <a href="javascript:;" class="arrow arrow_right" id="next">></a>
+
+
+</div>
+<script>
+    window.onload = function () {
+        var wrap = document.getElementById("wrap");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var container = document.querySelector(".container");
+        var dots = document.getElementById("buttons").getElementsByTagName("span");
+        var index =  0;
+        var timer;
+
+
+        // 点击左右按钮切换图片
+        function change(offset) {
+            var newLeft = parseInt(wrap.style.left) + offset;
+            if(newLeft < -6480){
+                wrap.style.left = "-1080px";
+                index = 0;
+            }else if(newLeft > -1080){
+                wrap.style.left = "-6480px";
+                index = 5;
+            }else{
+                wrap.style.left = newLeft + 'px';
+            }
+        }
+        //  自动播放
+        function autoPlay() {
+            timer = setInterval(function () {
+                index++;
+                change(-1080);
+                showCurrentDot();
+            },3000);
+        }
+
+        //  移入移出时关闭自动播放
+        container.onmouseenter = function () {
+            clearInterval(timer);
+        };
+        container.onmouseleave = function () {
+            autoPlay();
+        };
+
+        // 点击切换小圆点
+        function showCurrentDot(){
+            for( var i = 0, len = dots.length; i < len; i++){
+                dots[i].className = '';
+            }
+            dots[index].className = "on";
+        }
+
+        // 切换圆点同时更新图片
+        for(var i = 0; i < dots.length; i++){
+            (function (i) {
+                dots[i].index = i;
+                dots[i].onclick = function () {
+                    change(1080*(index-this.index));
+                    index = this.index;
+                    showCurrentDot();
+                };
+            })(i);
+        }
+
+        //  点击切换上一张
+        prev.onclick = function () {
+            index--;
+            change(1080);
+            showCurrentDot();
+        };
+        // 点击切换下一张
+        next.onclick = function () {
+            index++;
+            change(-1080);
+            showCurrentDot();
+        };
+    }
+</script>
+</body>
+</html>

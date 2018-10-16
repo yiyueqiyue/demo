@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 id="score">0</h1>
+    <div class="progress" >
+        <img id="progress" style="width: 123px;" src="images/progress.png" alt="">
+    </div>
+    <button class="start" id="start">开始游戏</button>
+    <div class="rule" id="rule">游戏规则</div>
+    <div class="rules" id="rules" style="display:none;">
+        <p>游戏规则</p>
+        <p>1.游戏时间60s</p>
+        <p>2.听声音选唱名，正确加十分，错误减十分</p>
+        <a href="#" id="close">关闭</a>
+    </div>
+    <div class="buttons" style="display: none;" id="buttons">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+    </div>
+    <div class="mask" id="mask">
+        <h1>GAME OVER</h1>
+        <button id="restart">重新开始</button>
+    </div>
+    <div id="mediaPlayer">
+        <audio src="songs/1.mp3"></audio>
+        <audio src="songs/2.mp3"></audio>
+        <audio src="songs/3.mp3"></audio>
+        <audio src="songs/4.mp3"></audio>
+        <audio src="songs/5.mp3"></audio>
+        <audio src="songs/6.mp3"></audio>
+        <audio src="songs/7.mp3"></audio>
+    </div>
+</div>
+
+</body>
+</html>

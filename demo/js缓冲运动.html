@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: #c7254e;
+        }
+    </style>
+</head>
+<script>
+    function startMove() {
+        var oDiv = document.getElementById('div1');
+        setInterval(function () {
+            var speed = (500 - oDiv.offsetLeft)/30;
+            oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+        },10)
+    }
+</script>
+<body>
+<input type="button" id="btn1" value="运动" onclick="startMove()">
+<div id="div1">
+
+</div>
+</body>
+</html>

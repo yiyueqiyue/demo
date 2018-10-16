@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: #c7254e;
+            position: absolute;
+
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    var timer = null;
+    function startMove(){
+        var oDiv = document.getElementById('div1');
+        timer = setInterval(function () {
+            var speed = 10;
+            if(oDiv.offsetLeft >= 300){
+                clearInterval(timer);
+            }
+            oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+        },30);
+    }
+</script>
+<input type="button" id="btn1" value="移动" onclick="startMove()">
+<div id="div1"></div>
+</body>
+</html>

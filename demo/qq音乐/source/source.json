@@ -1,0 +1,65 @@
+[
+  {
+  "name": "Here We Are",
+  "singer": "华晨宇",
+  "album": "Here We Are",
+  "time": "04:50",
+  "link_url": "source/华晨宇 - Here We Are.mp3",
+  "cover": "source/华晨宇__4.jpg",
+  "link_lrc": "source/华晨宇 - Here We Are.lrc"
+},
+  {
+    "name": "To Be Free",
+    "singer": "华晨宇",
+    "album": "To Be Free",
+    "time": "04:34",
+    "link_url": "source/华晨宇 - To Be Free.mp3",
+    "cover": "source/华晨宇_To Be Free_4.jpg",
+    "link_lrc": "source/华晨宇 - To Be Free.lrc"
+  },
+  {
+    "name": "寒鸦少年",
+    "singer": "华晨宇",
+    "album": "寒鸦少年",
+    "time": "05:15",
+    "link_url": "source/华晨宇 - 寒鸦少年.mp3",
+    "cover": "source/华晨宇_寒鸦少年_4.jpg",
+    "link_lrc": "source/华晨宇 - 寒鸦少年.lrc"
+  },
+  {
+    "name": "火星情报局",
+    "singer": "华晨宇",
+    "album": "火星情报局",
+    "time": "02:57",
+    "link_url": "source/华晨宇 - 火星情报局.mp3",
+    "cover": "source/华晨宇_火星情报局_4.jpg",
+    "link_lrc": "source/华晨宇 - 火星情报局.lrc"
+  },
+  {
+    "name": "齐天",
+    "singer": "华晨宇",
+    "album": "齐天",
+    "time": "04:46",
+    "link_url": "source/华晨宇 - 齐天.mp3",
+    "cover": "source/华晨宇_悟空传 电影音乐原声带_4.jpg",
+    "link_lrc": "source/华晨宇 - 齐天.lrc"
+  },
+  {
+    "name": "我离孤单几公里",
+    "singer": "华晨宇",
+    "album": "我离孤单几公里",
+    "time": "04:02",
+    "link_url": "source/华晨宇 - 我离孤单几公里 (Live).mp3",
+    "cover": "source/华晨宇_Unknown_4.jpg",
+    "link_lrc": "source/华晨宇 - 我离孤单几公里 (Live).lrc"
+  },
+  {
+    "name": "烟火里的尘埃",
+    "singer": "华晨宇",
+    "album": "烟火里的尘埃",
+    "time": "06:42",
+    "link_url": "source/华晨宇 - 烟火里的尘埃 (Live).mp3",
+    "cover": "source/华晨宇_Unknown_4.jpg",
+    "link_lrc": "source/华晨宇 - 烟火里的尘埃 (Live).lrc"
+  }
+]

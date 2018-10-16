@@ -1,0 +1,129 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .tab1{
+            background-color: #3d90de;
+            text-align: center;
+            border: 1px solid #fff;
+            width: 500px;
+        }
+        .tabon{
+            background-color: #0050d4!important;
+        }
+        .tab1 tbody tr{
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    // 点击和移入变色
+    $(function () {
+        $(".btn1").click(function () {
+            $(".tab1 tr:even").attr({style:"background-color:#ccc"});
+            $(".tab1 tr:odd").attr({style:"background-color:#fff"});
+            $(".tab1 thead tr").attr({style:" background-color: #3d90de;"});
+        });
+        $(".tab1").delegate("tr","mouseenter",function () {
+            $(this).addClass("tabon");
+        });
+        $(".tab1").delegate("tr","mouseleave",function () {
+            $(this).removeClass("tabon");
+        });
+    });
+    // 动态添加和删除表格
+    $(function () {
+        // 添加表格
+        $("#addBtn").click(function () {
+            var idVal = jQuery("table").find("tr").length;
+            var nameVal = $("#name").val();
+            var ageVal = $("#age").val();
+            var tr = "<tr><td>"+ idVal +"</td><td>"+ nameVal+ "</td><td>"+ ageVal+"</td><td>"+
+                "<a href='#' class='myClz'>删除</a></td></tr>";
+
+            if(isNaN(ageVal)||ageVal<0 ||ageVal>150 || ageVal===""){
+                alert("输入错误");
+            }else{
+                if(nameVal==""){
+                    alert("请输入名字");
+                }else{
+                    $("#Tbody").append(tr);
+                }
+            }
+        });
+        //  删除
+        $("#removeBtn").click(function () {
+            $("#Tbody").empty();
+        });
+        $('#Tbody').on('click', ".myClz", function () {
+            $(this).closest('tr').remove();
+            sortTab();
+        });
+
+        //  序号重新排列
+        function sortTab() {
+            $("#Tbody").children("tr").each(function (index,ele) {
+                console.log(ele);
+                ele.index = index;
+                $(ele).find("td:first").text(index + 1);
+            })
+        }
+
+
+    })
+    // $x.attr("color","red");
+</script>
+
+<form action="" name="userForm">
+    姓名：<input type="text" id="name" name="name">
+    年龄：<input type="text" id="age" name="age">
+    <input type="button" value="添加" id="addBtn">
+    <input type="button" value="删除所有" id="removeBtn">
+</form>
+
+<table class="tab1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="Tbody">
+    <tr>
+        <td>1</td>
+        <td>张佳</td>
+        <td>22</td>
+        <td><a href='#' class='myClz'>删除</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>李依</td>
+        <td>23</td>
+        <td><a href='#' class='myClz'>删除</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王兵</td>
+        <td>28</td>
+        <td><a href='#' class='myClz'>删除</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>柳丁</td>
+        <td>19</td>
+        <td><a href='#' class='myClz'>删除</a></td>
+    </tr>
+    </tbody>
+</table>
+<button class="btn1">变色</button>
+</body>
+</html>

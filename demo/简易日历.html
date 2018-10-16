@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #calendar{
+            width: 280px;
+            height: 500px;
+            border:1px solid #af9898;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 2em;
+            background-color: #f1b6ac;
+
+        }
+        #calendar ul li ,p{
+            list-style: none;
+            font-size: 15px;
+            float:left;
+            text-align: center;
+            width: 70px;
+            height: 60px;
+
+
+        }
+
+        #calendar ul li {
+            border:1px solid #ffafc9;
+            background-color: #ffceea;
+            margin: 10px;
+            padding-top: 10px;
+
+        }
+        #calendar ul li:hover{
+            background-color: #cccccc;
+            border: 1px solid #ffcec6;
+        }
+
+
+        .txt{
+            background: #e6cdf1;
+            width: 200px;
+            height: 120px;
+            position:relative;
+            margin: 0 auto;
+            margin-top: 4em;
+            overflow: hidden;
+            text-align: center;
+            /*word-break:break-all;*/
+
+        }
+        .txt p{
+            margin-top: 10px;
+            width: 200px;
+            height: 200px;
+            line-height:20px;
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    window.onload = function(){
+        var arr=[
+            '当窗外的风雨来时，我们有房屋，当心中的风雨来时，你会有什么？',
+            '穿越时空的心音，总是让人悸动，流在眼角的热泪，总会让人心疼.',
+            '胜利不是战胜敌人，而是提高自己。我们只要每天进步百分之一，那就是成功。',
+            '生活中遇到任何事该牢记的态度：一生不喜与人争抢，但该得到的绝不会让。',
+            '难过的时候不妨想想：我们失去的东西，也会难过地想要找回我们吗？ ​​​​',
+            '没有人是完美的，无须遮掩自己的缺失。',
+            '做人要能抬头，更要能低头。',
+            '一仰一俯之间，不仅是一个姿势，更是一种态度、一种品质。',
+            '随意点',
+            '懒惰象生锈一样，比操劳更能消耗身体；经常用的钥匙，总是亮闪闪的。',
+            '这个世界最珍贵的不是“得不到”和“已失去”，而是“已拥有”',
+            '其实你很累吧。你不用这么强大，哭也可以的，任性也可以的。但就是不准放弃。 ​​​​'
+
+        ];
+
+        var oDiv = document.getElementById('calendar');
+        var oLi = oDiv.getElementsByTagName('li');
+        var oTxt = oDiv.getElementsByTagName('div')[0];
+
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].index=i;
+            oLi[i].onmouseover=function(){
+                for(var i=0;i<oLi.length;i++)
+                {
+                    oLi[i].className='';
+                }
+                this.className='active';
+                oTxt.innerHTML='<h2>'+(this.index+1)+'月</h2><p>'+arr[this.index]+'</p>';
+            };
+        }
+    };
+
+
+</script>
+<div id="calendar">
+    <ul>
+        <li id="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    <div class="txt">
+
+    </div>
+</div>
+</body>
+</html>
