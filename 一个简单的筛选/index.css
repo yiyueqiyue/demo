@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(#040408, #7e8cff) no-repeat;
+    height: 100%;
+    z-index: -2;
+}
+#container {
+    height: 100%;
+    width: 100%;
+}
+.pic img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    opacity: .9;
+    z-index: -1;
+}
+.select {
+    display: block;
+    margin: 50px 50px;
+}
+.select .item .form {
+    background: rgba(255, 255, 255, 0.49);
+}
+.select .item .form span{
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    line-height: 25px;
+}
+.select .item .form label {
+    margin-left: 20px;
+}
+.select .item .form .checked {
+    background: rgba(54, 58, 122, 0.46);
+}
+.select .item .form label .radio{
+    display: none;
+}
+.list {
+    margin-left: 30px;
+}
+.list .list-wrapper {
+    float: left;
+    height: 92px;
+    margin: 20px 0 0 20px;
+}
+.list .list-wrapper:hover {
+    color: #000ae1;
+}
+.list .list-wrapper:hover .list-pic {
+    border: 1px solid red;
+}
+.list-wrapper .list-pic {
+    width: 70px;
+    height: 70px;
+}
+.list-wrapper p {
+    background: linear-gradient(#ffffff, #1a1b2c);
+    width: 70px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+}
