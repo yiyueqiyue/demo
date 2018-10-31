@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: pink;
+        }
+        #myTab {
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            width: 188px;
+            color: cadetblue;
+        }
+        #barcon {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<table id="myTab">
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+    <tr>
+        <td>小白</td>
+        <td>绿</td>
+        <td>红色</td>
+        <td>蓝色</td>
+    </tr>
+</table>
+
+<div id="barcon"></div>
+<script>
+    goPage(1, 8);
+    function goPage(pro, psize) {
+        var itable = document.getElementById("myTab");
+        var num = itable.rows.length;
+
+        var currentPage = pro;
+        var pageSize = psize;
+        var totalPage = (num / pageSize > parseInt(num / pageSize)) ? parseInt(num / pageSize) + 1 : parseInt(num / pageSize);
+
+        var startRow = (currentPage - 1) * pageSize;
+        var endRow = currentPage * pageSize;
+        endRow = (endRow > num) ? num : endRow;
+
+        for (var i = 0; i < num; i++) {
+            var irow = itable.rows[i];
+            if (i >= startRow && i <= endRow) {
+                irow.style.display = "block";
+            } else {
+                irow.style.display = "none";
+            }
+        }
+
+        var tempStr = "共" + num + "条记录 分" + totalPage + "页 当前第" + currentPage + "页";
+
+        if (currentPage > 1) {
+            tempStr += "<a href=\"#\" onclick=\"goPage(" + (1) + "," + psize + ")\">首页</a>"
+            tempStr += "<a href=\"#\" onclick=\"goPage(" + (currentPage - 1) + "," + psize + ")\"><上一页</a>"
+        } else {
+            tempStr += "首页";
+            tempStr += "<上一页";
+        }
+        if (currentPage < totalPage) {
+            tempStr += "<a href=\"#\" onclick=\"goPage(" + (currentPage + 1) + "," + psize + ")\">下一页></a>"
+            tempStr += "<a href=\"#\" onclick=\"goPage(" + (totalPage) + "," + psize + ")\">尾页</a>"
+        }
+        else {
+            tempStr += "下一页>";
+            tempStr += "尾页";
+        }
+        document.getElementById("barcon").innerHTML = tempStr;
+    }
+</script>
+</body>
+</html>
