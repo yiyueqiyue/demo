@@ -26,3 +26,7 @@ https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/de
 表格添加
 
 https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/添加表格.html
+
+一个静态页面
+
+https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/任务7静态/index.html
