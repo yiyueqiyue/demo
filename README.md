@@ -30,3 +30,7 @@ https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/de
 一个静态页面
 
 https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/任务7静态/index.html
+
+
+分页
+https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/%E5%88%86%E9%A1%B5.html
