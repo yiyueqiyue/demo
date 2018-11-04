@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          mod="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" mod="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        h1 {
+            text-align: center;
+        }
+        #tab{
+            width: 500px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            user-select: none;
+        }
+        .tab-nav ul {
+            position: absolute;
+            cursor:pointer;
+            background: #ccc;
+        }
+        .tab-nav .active {
+            background: #fff;
+        }
+        .tab-nav ul li {
+            width: 100px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            float: left;
+        }
+        .content div{
+            margin:25px 6px 10px 6px;
+        }
+        .content{
+            margin: 25px auto;
+        }
+        .content .mod ul li {
+            float: left;
+            text-align: center;
+            width: 200px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+<h1>Tab</h1>
+<div id="tab">
+    <div class="tab-nav" id="tab-nav">
+        <ul>
+            <li class="active">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+            <li>tab4</li>
+            <li>tab5</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div class="mod">
+            <ul>
+                <li>项目1</li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none">
+            <ul>
+                <li>项目1</li>
+                <li>项目2</li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none">
+            <ul>
+                <li>项目1</li>
+                <li>项目2</li>
+                <li>项目3</li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none">
+            <ul>
+                <li>项目1</li>
+                <li>项目2</li>
+                <li>项目3</li>
+                <li>项目4</li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none">
+            <ul>
+                <li>项目1</li>
+                <li>项目2</li>
+                <li>项目3</li>
+                <li>项目4</li>
+                <li>项目5</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var navs = document.getElementById("tab-nav").getElementsByTagName("li");
+        var divs = document.getElementById("content").getElementsByTagName("div");
+        for(var i=0; i<navs.length; i++) {
+            navs[i].index=i;
+            navs[i].onclick = function () {
+                for(var j=0; j<navs.length; j++) {
+                    navs[j].className = '';
+                    divs[j].style.display = "none";
+                }
+                this.className = 'active';
+                divs[this.index].style.display = "block";
+            }
+        }
+    }
+</script>
+</body>
+</html>
