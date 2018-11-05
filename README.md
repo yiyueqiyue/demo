@@ -43,7 +43,3 @@ https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/de
 
 https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/%E5%88%86%E9%A1%B5.html
 
-仿qq音乐
-
-https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/qq%E9%9F%B3%E4%B9%90/index.html
-
