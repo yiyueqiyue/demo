@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #data {
+            width: 300px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+        }
+
+        #data div {
+            display: flex;
+        }
+
+        #data h5 {
+            text-align: center;
+        }
+
+        #data div span {
+            padding: 0 10px;
+        }
+
+        #prev, #next {
+            color: #cc62bb;
+            cursor: pointer;
+        }
+
+        #year {
+            flex: 1;
+            text-align: center;
+        }
+
+        #date-title {
+            overflow: hidden;
+            list-style: none;
+            background: #ccc;
+        }
+
+        #date-title li {
+            float: left;
+            width: 40px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #date {
+            overflow: hidden;
+            list-style: none;
+        }
+
+        #date li {
+            width: 34px;
+            height: 34px;
+            float: left;
+            margin: 1px;
+            border: 2px solid rgba(0, 0, 0, 0);
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #date li:hover {
+            border: 2px solid #8395ff;
+            border-radius: 50px;
+        }
+
+        .active {
+            background: #ccc;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="data">
+    <div>
+        <span id="prev">上一月</span>
+        <span id="year"></span>
+        <span id="next">下一月</span>
+    </div>
+    <h5 id="month"></h5>
+    <ul id="date-title">
+        <li>日</li>
+        <li>一</li>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+        <li>五</li>
+        <li>六</li>
+    </ul>
+    <ul id="date">
+    </ul>
+</div>
+<script>
+    var year = new Date().getFullYear(),
+        month = new Date().getMonth();
+    var lis = document.getElementById('date-title').getElementsByTagName('li');
+    var dates = document.getElementById("date");
+    var date = dates.getElementsByTagName("li");
+    var today = new Date().getDate();
+
+    // 定义返回下一个月
+    function daysInMonth(year, month, num) {
+        return new Date(year, month + 1, num);
+    }
+
+    drawCLD(year, month);
+
+    // 定义日历
+    function drawCLD(year, month) {
+        // 先清空日历
+        dates.innerHTML = '';
+        var firstWeek = new Date(year, month, 1).getDay();
+        var firstDay = new Date(year, month, 1).getDate();
+        var lastDay = daysInMonth(year, month, 0).getDate();
+        var index = []; // 日历标题的index值
+        var num; // 记录第一天前有几个空白
+        var day, text;
+
+        for (var i = 0; i < lis.length; i++) {
+            index[i] = i;
+        }
+
+
+        if (firstWeek !== 0) {
+            // 在每月第一天前创建空白li
+            for (var j = 0; j < index[firstWeek]; j++) {
+                num = j + 1;
+                day = document.createElement('li');
+                dates.appendChild(day);
+            }
+        } else if (firstWeek === 0) {
+            num = 0;
+        }
+
+        // 创建日期并添加
+        for (var i = 0; i < lastDay; i++) {
+            text = document.createTextNode(firstDay + i);
+            day = document.createElement('li');
+            day.appendChild(text);
+            dates.appendChild(day);
+
+            // 给日期添加点击事件，被点击的li添加class，其余的移除class
+            date[i + num].onclick = function () {
+                remove();
+                addClass(this, "active");
+            }
+        }
+
+        //  判断今天日期并增加class
+        if (month === new Date().getMonth() && year === new Date().getFullYear()) {
+            addClass(date[today + num - 1], "active");
+        }
+
+        // 移除所有的li的class
+        function remove() {
+            for (var i = 0; i < lastDay + num; i++) {
+                removeClass(dates.getElementsByTagName("li")[i], "active");
+            }
+        }
+
+        // 将此时的年月写入
+        document.getElementById("month").innerText = (month + 1) + "月";
+        document.getElementById("year").innerText = year + "年";
+    }
+
+
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    // 点击上一天
+    prev.onclick = function () {
+        if (month > 0 && month < 12) {
+            month = month - 1;
+            drawCLD(year, month);
+        } else {
+            month = 11;
+            year = year - 1;
+            drawCLD(year, month);
+        }
+    }
+
+    // 点击下一天
+    next.onclick = function () {
+        if (month >= 0 && month < 11) {
+            month = month + 1;
+            drawCLD(year, month);
+        } else {
+            month = 0;
+            year = year + 1;
+            drawCLD(year, month);
+        }
+    }
+
+    // 定义增加和移除class
+    function hasClass(ele, cls) {
+        return ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+
+    function addClass(ele, cls) {
+        if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+    }
+
+    function removeClass(ele, cls) {
+        if (hasClass(ele, cls)) {
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            ele.className = ele.className.replace(reg, ' ');
+        }
+    }
+
+
+</script>
+</body>
+</html>
