@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    float: left;
+}
+a {
+    text-decoration: none;
+}
+img {
+    display: block;
+}
+.f1 {
+    float: left;
+}
+.header-box {
+    line-height: 42px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.header {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    width: 100%;
+    min-width: 1280px;
+    height: 84px;
+    background: #000;
+    background: rgba(0,0,0,0.8);
+}
+.header-inner {
+    z-index: 99;
+    width: 1200px;
+    height: 84px;
+    margin: 0 auto;
+    position: relative;
+}
+.header-inner .logo {
+    float: left;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background: url(//game.gtimg.cn/images/yxzj/web201605/top_banner/logo.png) no-repeat center center;
+    width: 218px;
+    height: 152px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+.header-inner .main-nav {
+    left: 218px;
+    line-height: 84px;
+    position: absolute;
+}
+.main-nav li:hover , .tab-hd li:hover{
+    box-sizing: border-box;
+    background: linear-gradient(rgba(255,255,255,.3),rgba(243,194,88,.5));
+    border-bottom: 3px solid #f3c258;
+}
+.main-nav li:hover a,.main-nav li:hover em, .down-nav a:hover{
+    color: #f3c258;
+}
+.main-nav li {
+    width: 110px;
+    height: 84px;
+    text-align: center;
+}
+.main-nav a {
+    display: block;
+    width: 110px;
+    padding: 20px 0 0;
+    color: #c9c9dd;
+    font-size: 18px;
+    line-height: 30px;
+}
+.main-nav em {
+    display: block;
+    padding-top: 5px;
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    font-size: 12px;
+    line-height: 16px;
+    color: #858792;
+}
+.header-inner .login_pannel {
+    width: 182px;
+    position: absolute;
+    top: 21px;
+    right: 0;
+}
+.login_pannel img {
+    display: inline-block;
+    border: 1px solid #f3c258;
+    border-radius: 50%;
+}
+.avatar_text {
+    line-height: 25px;
+    margin: -50px auto auto 50px;
+}
+.avatar_text a {
+    color: white;
+}
+.avatar_text p {
+    font-size: 13px;
+    color: #ccc;
+}
+.sub-nav {
+    display: none;
+    height: 300px;
+    width: 100%;
+    background:rgba(0,0,0,.5);
+    z-index: 1;
+    position: absolute;
+}
+.sub-nav .sub-nav-inner {
+    padding: 10px 0 0 400px;
+}
+.down-nav {
+    float: left;
+    display: inline;
+    padding-left: 10px;
+    width: 100px;
+    text-align: center;
+    white-space: nowrap;
+}
+.down-nav a {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 14px;
+    color: #c9c9dd;
+}
+.down-nav .icon-guard, .down-nav .icon-health, .down-nav .icon-fans, .down-nav .icon-hot {
+    overflow: hidden;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url(//game.gtimg.cn/images/yxzj/web201706/images/comm/index.png) no-repeat -136px -5px;
+}
+.down-nav .icon-fans {
+    background-position: -137px -68px;
+}
+.down-nav .icon-health {
+    background-position: -137px -36px;
+}
+.wrapper .bg {
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1100px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+.wrapper .link {
+    position: absolute;
+    z-index: 2;
+    width: 240px;
+    height: 60px;
+    top: 450px;
+    left: 50%;
+    margin-left: -120px;
+    outline: none;
+    text-indent: -9999px;
+    overflow: hidden;
+    /*background: rgba(0,0,0,.5);*/
+}
+.main {
+    padding-top: 540px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    /*min-height: 600px;*/
+}
+.main_top {
+    width: 1200px;
+    height: 342px;
+    background: url(//game.gtimg.cn/images/yxzj/web201706/images/comm/rotate_bg.png) no-repeat left top;
+}
+.main_top .rotate {
+    width: 604px;
+    height: 342px;
+    overflow: hidden;
+}
+.rotate .promo-list {
+    position: relative;
+    width: 3020px;
+    height: 298px;
+}
+.rotate li {
+    width: 604px;
+    height: 298px;
+    float: left;
+}
+.rotate li img {
+    display: block;
+    width: 604px;
+    height: 298px;
+    border-radius: 0;
+}
+.rotate .rt {
+    float: left;
+    font-size: 14px;
+    display: inline-block;
+    width: 120px;
+    height: 44px;
+    line-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    color: #b1b2be;
+}
+.rotate .rn {
+    background: rgba(255,255,255,0.15);
+    color: #f3c258;
+}
+.rotate .rbox {
+    height: 44px;
+    width: 604px;
+}
+.news_center {
+    position: relative;
+    width: 325px;
+    height: 342px;
+    overflow: hidden;
+    padding: 0 17px;
+}
+.news_center .newsTab {
+    position: relative;
+    width: 325px;
+}
+.newsTab .tab-hd {
+    border-bottom: 1px solid #000;
+}
+.tab-hd li {
+    width: 63px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    padding-bottom: 3px;
+}
+.tab-hd li a {
+    display: inline-block;
+    color: #b8b9c5;
+}
+.news_center .news-list li {
+    color: #b8b9c5;
+    font-size: 14px;
+    width: 294px;
+    height: 20px;
+    margin-bottom: 11px;
+}
+.news_center .news-list li p{
+    display: inline-block;
+    overflow: hidden;
+    width: 258px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.news_center .news-list .line-sp{
+    height: 36px;
+    line-height: 36px;
+    padding: 0 15px;
+    margin-top: 18px;
+    text-align: center;
+    font-size: 25px;
+    background: #414046;
+}
+.news-list .line-sp a {
+    color: #f3c258;
+}
+.news-time {
+    float: right;
+    font-size: 12px;
+    color: #b8b9c5;
+}
+.download_pannel {
+    width: 236px;
+    height: 342px;
+}
+.download_pannel a {
+    display: block;
+}
+.download_pannel .download_btn {
+    width: 236px;
+    height: 128px;
+    background: url("http://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png") 0 -219px;
+}
+.download_pannel .freshman_btn {
+    width: 236px;
+    height: 106px;
+    background: url("http://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png") 0 -350px;
+}
+.download_pannel .tiyan_btn {
+    width: 236px;
+    height: 108px;
+    background: url("http://game.gtimg.cn/images/yxzj/web201706/images/comm/index.png") 0 -461px;
+}
+.footer-wrap {
+    position: relative;
+    z-index: 2;
+    height: 362px;
+    background: url(//game.gtimg.cn/images/yxzj/web201605/top_banner/bg_footer.jpg) no-repeat center 0;
+}
+.footer-wrap .foot {
+    position: relative;
+    width: 1200px;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+.footer-wrap .foot_lefts {
+    display: block;
+    float: none;
+    height: 66px;
+    padding-bottom: 10px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #d4d4d4;
+}
+.foot_lefts .foot_ieg_logo {
+    float: left;
+    width: 180px;
+    height: 35px;
+    text-indent: -999em;
+    overflow: hidden;
+    margin: 15px 0 0 2px;
+    background: url(//game.gtimg.cn/images/js/2018foot/logo/foot-light.png);
+}
+.foot_links {
+    display: inline;
+    float: right;
+    width: 634px;
+    list-style: none;
+}
+.foot_links .link_map span, .foot_links .link_map a {
+    font-size: 12px;
+    color: #494949;
+}
+.footer-wrap .copyright_en {
+    margin: 31px 0 0 -135px;
+}
+.foot_links .copyright_txt {
+    font-size: 10px;
+}
+.foot_bottom .fb {
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
