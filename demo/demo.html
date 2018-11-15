@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+            border: 1px solid #ccc;
+        }
+        .left li {
+            list-style: none;
+            border: 1px solid #fff;
+        }
+        .left ul li:hover {
+            border: 1px solid #ccc;
+
+        }
+        .left ul li:hover span {
+            display: block;
+        }
+        .left ul li span {
+            display: none;
+            float: right;
+        }
+        .right {
+            margin-left: 300px;
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left" id="left">
+        <ul>
+            <li>MARY <span>></span></li>
+            <li>BENNY <span>></span></li>
+            <li>HONNEY <span>></span></li>
+            <li>DEMO <span>></span></li>
+        </ul>
+    </div>
+    <div class="right" id="right"></div>
+</div>
+<script>
+    var right = document.getElementById("right");
+    var left = document.getElementById("left").getElementsByTagName("li");
+    var index = 0;
+    for(var i=0; i<left.length; i++) {
+        left[i].index = i + 1;
+        left[i].addEventListener("click",function () {
+            var str = this.innerText.match(/[0-9a-z]+/ig);
+            right.innerHTML = this.index + "楼住的是" +str;
+        })
+    }
+    function autoPlay() {
+        for(var i=0; i<left.length; i++ ) {
+            left[i].style.border = '';
+        }
+        if(index >= left.length) {
+            index = 0;
+            left[index].style.border = "1px solid #ccc";
+            right.innerHTML = (index+1) + "楼住的是" + left[index].innerText.match(/[0-9a-z]+/ig);
+        } else {
+            left[index].style.border = "1px solid #ccc";
+            right.innerHTML = (index+1) + "楼住的是" +  left[index].innerText.match(/[0-9a-z]+/ig);
+            index += 1;
+        }
+    }
+    setInterval(function () {autoPlay()},2000);
+</script>
+</body>
+</html>
