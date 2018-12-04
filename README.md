@@ -46,3 +46,7 @@ https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/de
 简易王者荣耀
 
 https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80/index.html
+
+qq音乐
+
+https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/qq%E9%9F%B3%E4%B9%90/index.html
