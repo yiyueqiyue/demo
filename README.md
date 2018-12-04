@@ -50,3 +50,7 @@ https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/de
 qq音乐
 
 https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/qq%E9%9F%B3%E4%B9%90/index.html
+
+飘雪花
+
+https://htmlpreview.github.io/?https://github.com/yiyueqiyue/demo/blob/master/demo/snow.html
