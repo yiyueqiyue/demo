@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 14px;
+        }
+        body {
+            background: #000;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var oPageX = window.screen.width;
+    var oPageY = window.screen.height;
+    var aSnow = [];
+
+    function snow(x, y, xspeed, yspeed, xsin, size) {  // x水平位置,y垂直位置,xspeed水平速度,yspeed垂直速度,xsin漂移角度,size雪花大小
+        this.node = document.createElement('div');
+        this.x = x;
+        this.y = y;
+        this.xspeed = xspeed;
+        this.yspeed = yspeed;
+        this.xsin = xsin;
+        this.size = size;
+        this.createSnow = function () {
+            this.node.style.position = 'absolute';
+            this.node.style.top = this.y + 'px';
+            this.node.style.left = this.x + 'px';
+            this.node.innerHTML = '*';
+            document.body.appendChild(this.node);
+        };
+        this.createSnow();
+        this.snowMove = function () {
+            this.node.style.top = parseInt(this.node.style.top) + this.yspeed + 'px';
+            this.node.style.left = parseInt(this.node.style.left) + this.xsin * Math.sin(this.xspeed) + 'px';
+            this.node.style.fontSize = this.size + 'px';
+        };
+    }
+
+    // 创建雪花
+    function createSnow1(){
+        for(var i=0; i<Math.random()*5; i++) {
+            aSnow.push(new snow(Math.random()*oPageX,-50,0.02+Math.random()/10,1+Math.random(),Math.random()*30,20+Math.random()*30));
+        }
+    }
+
+    setInterval(createSnow1,1000);
+
+    // 雪花移动
+    function snowMove1() {
+        for(var j=0; j<aSnow.length; j++) {
+            aSnow[j].snowMove();
+            if(parseInt(aSnow[j].node.style.top)>oPageY || parseInt(aSnow[j].node.style.left)>oPageX) {
+                aSnow[j].node.parentNode.removeChild(aSnow[j].node);
+                aSnow.splice(j,1);
+            }
+        }
+    }
+    setInterval(snowMove1,10);
+</script>
+</body>
+</html>
